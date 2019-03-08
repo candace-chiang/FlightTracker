@@ -28,49 +28,56 @@ class Flight {
     var arriveScheduled: String!
     var arriveActual: String!
     
+    var date: String!
+    
     init(id: String, data: JSON) {
-        let info = data["FlightStatusResource"]["Flights"]["Flight"]
-        
         self.id = id
-        flightStatus = info["FlightStatus"]["Definition"].stringValue
-        plane = Plane(id: info["Equipment"]["AircraftCode"].stringValue)
+        flightStatus = data["FlightStatus"]["Definition"].stringValue
+        plane = Plane(id: data["Equipment"]["AircraftCode"].stringValue)
         
-        depart = Airport(code: info["Departure"]["AirportCode"].stringValue)
-        arrive = Airport(code: info["Arrival"]["AirportCode"].stringValue)
+        depart = Airport(code: data["Departure"]["AirportCode"].stringValue)
+        arrive = Airport(code: data["Arrival"]["AirportCode"].stringValue)
         
-        departTerm = info["Departure"]["Terminal"]["Name"].stringValue
-        if departTerm == nil {
+        departTerm = data["Departure"]["Terminal"]["Name"].stringValue
+        if departTerm == "" {
             departTerm = "--"
         }
         
-        departGate = info["Departure"]["Terminal"]["Gate"].stringValue
-        if departGate == nil {
+        departGate = data["Departure"]["Terminal"]["Gate"].stringValue
+        if departGate == "" {
             departGate = "--"
         }
         
-        arriveTerm = info["Arrival"]["Terminal"]["Name"].stringValue
-        if arriveTerm == nil {
+        arriveTerm = data["Arrival"]["Terminal"]["Name"].stringValue
+        if arriveTerm == "" {
             arriveTerm = "--"
         }
         
-        arriveGate = info["Arrival"]["Terminal"]["Gate"].stringValue
-        if arriveGate == nil {
+        arriveGate = data["Arrival"]["Terminal"]["Gate"].stringValue
+        if arriveGate == "" {
             arriveGate = "--"
         }
         
-        departScheduled = Utils.cleanDate(info["Departure"]["ScheduledTimeLocal"]["DateTime"].stringValue)
+        departScheduled = Utils.cleanDate(data["Departure"]["ScheduledTimeLocal"]["DateTime"].stringValue)
         
-        departActual = info["Departure"]["ActualTimeLocal"]["DateTime"].stringValue
-        if departActual != nil {
+        departActual = data["Departure"]["ActualTimeLocal"]["DateTime"].stringValue
+        if departActual != "" {
             departActual = Utils.cleanDate(departActual)
+        } else {
+            departActual = "N/A"
         }
         
-        arriveScheduled = Utils.cleanDate(info["Arrival"]["ScheduledTimeLocal"]["DateTime"].stringValue)
+        arriveScheduled = Utils.cleanDate(data["Arrival"]["ScheduledTimeLocal"]["DateTime"].stringValue)
         
-        arriveActual = info["Arrival"]["ActualTimeLocal"]["DateTime"].stringValue
-        if arriveActual != nil {
+        arriveActual = data["Arrival"]["ActualTimeLocal"]["DateTime"].stringValue
+        if arriveActual != "" {
             arriveActual = Utils.cleanDate(arriveActual)
+        } else {
+            arriveActual = "N/A"
         }
-
+        
+        let dateString = data["Departure"]["ScheduledTimeLocal"]["DateTime"].stringValue
+        let index = dateString.index(dateString.startIndex, offsetBy: 10)
+        date = String(dateString[..<index])
     }
 }

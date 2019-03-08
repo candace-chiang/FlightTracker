@@ -26,6 +26,12 @@ class RequestViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+        
         setUpBackground()
         setUpFields()
         setUpButton()
@@ -34,6 +40,11 @@ class RequestViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController!.isNavigationBarHidden = true
         self.flightField.delegate = self
+        self.button.isUserInteractionEnabled = true
+        
+        if flightNum != "" {
+            self.flightField.text = flightNum
+        }
     }
     
     //dismiss keyboard when you press somewhere else
@@ -68,26 +79,20 @@ class RequestViewController: UIViewController, UITextFieldDelegate {
             displayAlert(title: "Incomplete", message: "Enter a flight number.")
         }
         
+        button.isUserInteractionEnabled = false
+        
         //Gets new auth token and then gets flight status once that is successful
         LufthansaAPI.getAuthToken() {
             LufthansaAPI.getFlightStatus(flightNum: self.flightNum, date: Utils.getRepr(date: self.datePicker.date)) { flt in
-                if flt == JSON.null {
-                    self.displayAlert(title: "Invalid", message: "Sorry: couldn't find the flight.")
+                let json = flt["FlightStatusResource"]["Flights"]["Flight"]
+                if json == JSON.null {
+                    self.displayAlert(title: "Invalid", message: "No such flight.")
                     return
                 }
-                self.flight = Flight(id: self.flightNum, data: flt)
-                //self.animateImage()
+                self.flight = Flight(id: self.flightNum, data: json)
                 
                 self.performSegue(withIdentifier: "toFlight", sender: self)
             }
-        }
-    }
-    //fix
-    func animateImage(){
-        UIView.animate(withDuration: 4, animations: {
-            self.logoImage.frame = CGRect(x: self.view.frame.maxX + 300, y: 400, width: 300, height: 200)
-        }) { (done) in
-            self.logoImage.frame = CGRect(x: -300, y: 500, width: 300, height: 200)
         }
     }
     

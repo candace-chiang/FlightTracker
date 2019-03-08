@@ -69,7 +69,7 @@ class LufthansaAPI {
     static func getAirportCoordinates(code: String, completion: @escaping (Airport) -> ()) {
         let requestURL = "https://api.lufthansa.com/v1/references/airports/\(code)?limit=20&offset=0&LHoperated=0"
         let parameters: HTTPHeaders = ["Accept":"application/json", "Authorization":"Bearer \(self.authToken!)"]
-        
+
         Alamofire.request(requestURL, headers: parameters).responseJSON { response in
             //Makes sure thhat response is valid
             guard response.result.isSuccess else {
@@ -88,8 +88,29 @@ class LufthansaAPI {
         }
     }
     
-    static func getAllAirports(completion: @escaping ([Airport]) -> ()){
-        let requestURL = "https://api.lufthansa.com/v1/references/airports/?limit=20&offset=0&LHoperated=0"
+    static func getAircraft(code: String, completion: @escaping (Plane) -> ()) {
+        let requestURL = "https://api.lufthansa.com/v1/references/aircraft/\(code)?limit=20&offset=0"
+        let parameters: HTTPHeaders = ["Accept":"application/json", "Authorization":"Bearer \(self.authToken!)"]
+        
+        Alamofire.request(requestURL, headers: parameters).responseJSON { response in
+            //Makes sure thhat response is valid
+            guard response.result.isSuccess else {
+                print(response.result.error.debugDescription)
+                return
+            }
+            //Creates JSON object
+            let json = JSON(response.result.value)
+            print(json)
+            
+            let name = json["AircraftResource"]["AircraftSummaries"]["AircraftSummary"]["Names"]["Name"]["$"].stringValue
+            let plane = Plane(id: code)
+            plane.name = name
+            completion(plane)
+        }
+    }
+    
+    static func getAllAirports(completion: @escaping ([Airport]) -> ()){        
+        let requestURL = "https://api.lufthansa.com/v1/references/airports/?limit=100&offset=0&LHoperated=0"
         let parameters: HTTPHeaders = ["Authorization": "Bearer \(authToken!)", "Accept": "application/json"]
         
         Alamofire.request(requestURL, headers: parameters).responseJSON { response in
@@ -103,7 +124,7 @@ class LufthansaAPI {
             print(json)
             //Create new flight model and populate data
             var airports : [Airport] = []
-            for i in 0...19 {
+            for i in 0...100 {
                 let code = json["AirportResource"]["Airports"]["Airport"][i]["AirportCode"].stringValue
                 let name = json["AirportResource"]["Airports"]["Airport"][i]["Names"]["Name"][0]["$"].stringValue
                 let lat = json["AirportResource"]["Airports"]["Airport"][i]["Position"]["Coordinate"]["Latitude"].floatValue
@@ -112,6 +133,30 @@ class LufthansaAPI {
                 airports.append(Airport(lat: lat, lon: lon, code: code, name: name))
             }
             completion(airports)
+        }
+    }
+    
+    static func getFlightsFrom(type: String, code: String, date: String, completion: @escaping ([Flight]) -> ()) {
+        let requestURL = "https://api.lufthansa.com/v1/operations/flightstatus/\(type)/\(code)/\(date)"
+        let parameters: HTTPHeaders = ["Accept":"application/json", "Authorization" : "Bearer \(self.authToken!)"]
+        
+        Alamofire.request(requestURL, headers: parameters).responseJSON { response in
+            //Makes sure that response is valid
+            guard response.result.isSuccess else {
+                print(response.result.error.debugDescription)
+                return
+            }
+            //Creates JSON object
+            let json = JSON(response.result.value)
+            print(json)
+            let flights = json["FlightStatusResource"]["Flights"]["Flight"].arrayValue
+            var returned: [Flight] = []
+            for flight in flights {
+                let id = flight["OperatingCarrier"]["AirlineID"].stringValue + flight["OperatingCarrier"]["FlightNumber"].stringValue
+                returned.append(Flight(id: id, data: flight))
+            }
+            
+            completion(returned)
         }
     }
 }

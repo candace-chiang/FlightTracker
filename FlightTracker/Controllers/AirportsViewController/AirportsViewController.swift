@@ -7,24 +7,35 @@
 //
 
 import UIKit
+import MapKit
 
 class AirportsViewController: UIViewController {
+    
+    var mapView: MKMapView!
+    var airports: [Airport]!
+    var selected: Airport!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpMap()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController!.isNavigationBarHidden = true
+        self.mapView.delegate = self
     }
-    */
-
+    
+    func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped: UIControl) {
+        selected = annotationView.annotation as? Airport
+        performSegue(withIdentifier: "toAirport", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let selectedVC = segue.destination as? SelectedViewController {
+            selectedVC.airport = selected
+        }
+        
+    }
 }

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427CA14A2231FAD80047A0CB /* SourceSansPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 427CA1492231FAD80047A0CB /* SourceSansPro-Bold.otf */; };
+		427CA14E22322A450047A0CB /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA14D22322A450047A0CB /* SelectedViewController.swift */; };
+		427CA15022322A580047A0CB /* SelectedVC - UISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA14F22322A580047A0CB /* SelectedVC - UISetup.swift */; };
+		427CA156223238220047A0CB /* airportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA155223238220047A0CB /* airportAnnotation.swift */; };
+		427CA15822323A000047A0CB /* SelectedVC - Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA15722323A000047A0CB /* SelectedVC - Map.swift */; };
+		427CA15A22323A580047A0CB /* SelectedVC - Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA15922323A580047A0CB /* SelectedVC - Table.swift */; };
+		427CA15C22323FFB0047A0CB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA15B22323FFA0047A0CB /* TableViewCell.swift */; };
+		427CA15F223263CB0047A0CB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA15E223263CA0047A0CB /* FavoritesViewController.swift */; };
+		427CA1612232641F0047A0CB /* FavoritesVC - Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA1602232641F0047A0CB /* FavoritesVC - Table.swift */; };
+		427CA1632232647C0047A0CB /* FavoritesVC - UISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CA1622232647C0047A0CB /* FavoritesVC - UISetup.swift */; };
 		42FC39B3222F4C3500F2FB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39B2222F4C3500F2FB8F /* AppDelegate.swift */; };
 		42FC39B8222F4C3500F2FB8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FC39B6222F4C3500F2FB8F /* Main.storyboard */; };
 		42FC39BA222F4C3700F2FB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FC39B9222F4C3700F2FB8F /* Assets.xcassets */; };
@@ -28,7 +38,6 @@
 		42FC39E92230A18E00F2FB8F /* FlightVC - UISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39E82230A18E00F2FB8F /* FlightVC - UISetup.swift */; };
 		42FC39EB2230A4A300F2FB8F /* FlightVC - Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39EA2230A4A300F2FB8F /* FlightVC - Map.swift */; };
 		42FC39EF2230DE3A00F2FB8F /* AirportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39EE2230DE3A00F2FB8F /* AirportsViewController.swift */; };
-		42FC39F12230DE4800F2FB8F /* AirportsVC - UISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39F02230DE4800F2FB8F /* AirportsVC - UISetup.swift */; };
 		42FC39F32230DE9600F2FB8F /* AirportsVC - Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC39F22230DE9600F2FB8F /* AirportsVC - Map.swift */; };
 		4E78C7252F75348EBE69DDE6 /* Pods_FlightTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD59FBB1B7EE1B2202D89389 /* Pods_FlightTracker.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +45,16 @@
 /* Begin PBXFileReference section */
 		25E5D47A6C85D5C94EA73F6F /* Pods-FlightTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightTracker.debug.xcconfig"; path = "Target Support Files/Pods-FlightTracker/Pods-FlightTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCC6948C4C788FA6FAD1E13 /* Pods-FlightTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlightTracker.release.xcconfig"; path = "Target Support Files/Pods-FlightTracker/Pods-FlightTracker.release.xcconfig"; sourceTree = "<group>"; };
+		427CA1492231FAD80047A0CB /* SourceSansPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.otf"; sourceTree = "<group>"; };
+		427CA14D22322A450047A0CB /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewController.swift; sourceTree = "<group>"; };
+		427CA14F22322A580047A0CB /* SelectedVC - UISetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedVC - UISetup.swift"; sourceTree = "<group>"; };
+		427CA155223238220047A0CB /* airportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airportAnnotation.swift; sourceTree = "<group>"; };
+		427CA15722323A000047A0CB /* SelectedVC - Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedVC - Map.swift"; sourceTree = "<group>"; };
+		427CA15922323A580047A0CB /* SelectedVC - Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedVC - Table.swift"; sourceTree = "<group>"; };
+		427CA15B22323FFA0047A0CB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		427CA15E223263CA0047A0CB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		427CA1602232641F0047A0CB /* FavoritesVC - Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesVC - Table.swift"; sourceTree = "<group>"; };
+		427CA1622232647C0047A0CB /* FavoritesVC - UISetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritesVC - UISetup.swift"; sourceTree = "<group>"; };
 		42FC39AF222F4C3500F2FB8F /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FC39B2222F4C3500F2FB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FC39B7222F4C3500F2FB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +78,6 @@
 		42FC39E82230A18E00F2FB8F /* FlightVC - UISetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightVC - UISetup.swift"; sourceTree = "<group>"; };
 		42FC39EA2230A4A300F2FB8F /* FlightVC - Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightVC - Map.swift"; sourceTree = "<group>"; };
 		42FC39EE2230DE3A00F2FB8F /* AirportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewController.swift; sourceTree = "<group>"; };
-		42FC39F02230DE4800F2FB8F /* AirportsVC - UISetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirportsVC - UISetup.swift"; sourceTree = "<group>"; };
 		42FC39F22230DE9600F2FB8F /* AirportsVC - Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirportsVC - Map.swift"; sourceTree = "<group>"; };
 		CD59FBB1B7EE1B2202D89389 /* Pods_FlightTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlightTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +94,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427CA14C22322A090047A0CB /* SelectedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				427CA14D22322A450047A0CB /* SelectedViewController.swift */,
+				427CA14F22322A580047A0CB /* SelectedVC - UISetup.swift */,
+				427CA15722323A000047A0CB /* SelectedVC - Map.swift */,
+				427CA15922323A580047A0CB /* SelectedVC - Table.swift */,
+			);
+			path = SelectedViewController;
+			sourceTree = "<group>";
+		};
+		427CA15D223263960047A0CB /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				427CA15E223263CA0047A0CB /* FavoritesViewController.swift */,
+				427CA1622232647C0047A0CB /* FavoritesVC - UISetup.swift */,
+				427CA1602232641F0047A0CB /* FavoritesVC - Table.swift */,
+			);
+			path = FavoritesViewController;
+			sourceTree = "<group>";
+		};
 		42FC39A6222F4C3500F2FB8F = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +163,7 @@
 		42FC39C9222F54B000F2FB8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				427CA15B22323FFA0047A0CB /* TableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +174,8 @@
 				42FC39CE222F56B000F2FB8F /* RequestViewController */,
 				42FC39E52230A12300F2FB8F /* FlightViewController */,
 				42FC39ED2230DE1800F2FB8F /* AirportsViewController */,
+				427CA14C22322A090047A0CB /* SelectedViewController */,
+				427CA15D223263960047A0CB /* FavoritesViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,10 +194,12 @@
 				42FC39D3222F7B6A00F2FB8F /* SourceCodePro-Bold.otf */,
 				42FC39D5222F7BA800F2FB8F /* SourceCodePro-Regular.otf */,
 				42FC39E32230A05A00F2FB8F /* SourceSansPro-Regular.otf */,
+				427CA1492231FAD80047A0CB /* SourceSansPro-Bold.otf */,
 				42FC39D9222F7DD400F2FB8F /* BEBAS___.ttf */,
 				42FC39DB222F837800F2FB8F /* VT323-Regular.ttf */,
 				42FC39B9222F4C3700F2FB8F /* Assets.xcassets */,
 				42FC39D7222F7BF000F2FB8F /* hexString.swift */,
+				427CA155223238220047A0CB /* airportAnnotation.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				42FC39EE2230DE3A00F2FB8F /* AirportsViewController.swift */,
-				42FC39F02230DE4800F2FB8F /* AirportsVC - UISetup.swift */,
 				42FC39F22230DE9600F2FB8F /* AirportsVC - Map.swift */,
 			);
 			path = AirportsViewController;
@@ -275,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FC39D4222F7B6A00F2FB8F /* SourceCodePro-Bold.otf in Resources */,
+				427CA14A2231FAD80047A0CB /* SourceSansPro-Bold.otf in Resources */,
 				42FC39BD222F4C3700F2FB8F /* LaunchScreen.storyboard in Resources */,
 				42FC39BA222F4C3700F2FB8F /* Assets.xcassets in Resources */,
 				42FC39D6222F7BA800F2FB8F /* SourceCodePro-Regular.otf in Resources */,
@@ -320,6 +364,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FlightTracker/Pods-FlightTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -327,6 +372,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,16 +390,24 @@
 				42FC39D8222F7BF000F2FB8F /* hexString.swift in Sources */,
 				42FC39E22230971200F2FB8F /* Plane.swift in Sources */,
 				42FC39C5222F53E100F2FB8F /* Flight.swift in Sources */,
+				427CA15022322A580047A0CB /* SelectedVC - UISetup.swift in Sources */,
 				42FC39C7222F540E00F2FB8F /* LufthansaAPI.swift in Sources */,
+				427CA15C22323FFB0047A0CB /* TableViewCell.swift in Sources */,
 				42FC39E72230A17900F2FB8F /* FlightViewController.swift in Sources */,
 				42FC39E92230A18E00F2FB8F /* FlightVC - UISetup.swift in Sources */,
 				42FC39DE223068F100F2FB8F /* Airport.swift in Sources */,
+				427CA15822323A000047A0CB /* SelectedVC - Map.swift in Sources */,
+				427CA1632232647C0047A0CB /* FavoritesVC - UISetup.swift in Sources */,
+				427CA14E22322A450047A0CB /* SelectedViewController.swift in Sources */,
 				42FC39D2222F56EB00F2FB8F /* RequestVC - UISetup.swift in Sources */,
 				42FC39D0222F56CB00F2FB8F /* RequestViewController.swift in Sources */,
+				427CA15A22323A580047A0CB /* SelectedVC - Table.swift in Sources */,
+				427CA156223238220047A0CB /* airportAnnotation.swift in Sources */,
 				42FC39F32230DE9600F2FB8F /* AirportsVC - Map.swift in Sources */,
+				427CA15F223263CB0047A0CB /* FavoritesViewController.swift in Sources */,
 				42FC39EF2230DE3A00F2FB8F /* AirportsViewController.swift in Sources */,
-				42FC39F12230DE4800F2FB8F /* AirportsVC - UISetup.swift in Sources */,
 				42FC39EB2230A4A300F2FB8F /* FlightVC - Map.swift in Sources */,
+				427CA1612232641F0047A0CB /* FavoritesVC - Table.swift in Sources */,
 				42FC39B3222F4C3500F2FB8F /* AppDelegate.swift in Sources */,
 				42FC39E022308A1700F2FB8F /* Utils.swift in Sources */,
 			);

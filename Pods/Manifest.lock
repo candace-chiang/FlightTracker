@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.5.1)
+  - JGProgressHUD (2.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
+  - JGProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - JGProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  JGProgressHUD: c402c0f41fc291ca7e33bba2f999118d9682dd9c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0b4e55eddea914802dadcd2945d0a461e248f465
+PODFILE CHECKSUM: 13018325482091ab2b0ec685b0ee9f0aeec18760
 
 COCOAPODS: 1.6.1

@@ -6,6 +6,7 @@ target 'FlightTracker' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'JGProgressHUD'
   # Pods for FlightTracker
 
 end

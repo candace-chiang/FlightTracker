@@ -10,9 +10,8 @@ import Foundation
 
 class Utils {
     static func cleanDate(_ dateString: String) -> String {
-        let index = dateString.index(dateString.startIndex, offsetBy: 10)
         let next = dateString.index(dateString.startIndex, offsetBy: 11)
-        return String(dateString[..<index] + " " + dateString[next...])
+        return String(dateString[next...])
     }
     
     static func getRepr(date: Date) -> String {

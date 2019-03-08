@@ -54,12 +54,13 @@ extension RequestViewController {
         datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: view.frame.width * 4/5, height: view.frame.height/15))
         datePicker.center = CGPoint(x: view.frame.width/2, y: flightField.frame.maxY + view.frame.height/25)
         datePicker.setValue(UIColor.black, forKeyPath: "textColor")
+        datePicker.datePickerMode = .date
         view.addSubview(datePicker)
     }
     
     func setUpButton() {
         button = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.width/2, height: view.frame.height/20))
-        button.center = CGPoint(x: view.frame.width/2, y: datePicker.frame.maxY + view.frame.height/16)
+        button.center = CGPoint(x: view.frame.width/2, y: datePicker.frame.maxY + view.frame.height/12)
         button.titleLabel!.font = UIFont(name: "VT323-Regular", size: 40)
         button.setTitle("Find Flight!", for: .normal)
         button.setTitleColor(.black, for: .normal)

@@ -8,19 +8,21 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
-class Airport {
-    var code: String!
-    var location: CLLocation!
-    var name: String!
+class Airport: NSObject, MKAnnotation {
+    var title: String!
+    var subtitle: String!
+    var coordinate: CLLocationCoordinate2D
     
     init(code: String) {
-        self.code = code
+        self.subtitle = code
+        self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     }
     
     init(lat: Float, lon: Float, code: String, name: String) {
-        self.code = code
-        self.location = CLLocation(latitude: CLLocationDegrees(exactly: lat)!, longitude: CLLocationDegrees(exactly: lon)!)
-        self.name = name
+        self.title = name
+        self.subtitle = code
+        self.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: lat)!, longitude: CLLocationDegrees(exactly: lon)!)
     }
 }
